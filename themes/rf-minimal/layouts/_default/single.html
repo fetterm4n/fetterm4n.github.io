@@ -1,0 +1,17 @@
+{{ define "main" }}
+<article class="section prose">
+  <header>
+    <h1>{{ .Title }}</h1>
+    <p class="meta"><time datetime="{{ .Date.Format "2006-01-02" }}">{{ .Date.Format "Jan 2, 2006" }}</time></p>
+  </header>
+  {{ .Content }}
+
+  {{ with .Params.tags }}
+    <ul class="tag-list">
+      {{ range . }}
+        <li><a href="{{ (printf "/tags/%s/" (. | urlize)) | relURL }}">{{ . }}</a></li>
+      {{ end }}
+    </ul>
+  {{ end }}
+</article>
+{{ end }}

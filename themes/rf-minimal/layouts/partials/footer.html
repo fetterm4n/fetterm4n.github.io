@@ -1,0 +1,16 @@
+<footer class="site-footer">
+  <div class="container footer-inner">
+    <nav aria-label="Footer">
+      <ul class="footer-links">
+        <li><a href="{{ .Site.Params.social.github }}" rel="me noopener noreferrer" target="_blank">GitHub</a></li>
+        <li><a href="{{ .Site.Params.social.huggingface }}" rel="me noopener noreferrer" target="_blank">Hugging Face</a></li>
+        <li><a href="{{ .Site.Params.social.linkedin }}" rel="me noopener noreferrer" target="_blank">LinkedIn</a></li>
+        <li><a href="{{ .Site.Params.social.x }}" rel="me noopener noreferrer" target="_blank">X</a></li>
+        <li><a href="{{ "/index.xml" | relURL }}">RSS</a></li>
+        <li><a href="{{ "/privacy/" | relURL }}">Privacy</a></li>
+        <li><a href="{{ "/.well-known/security.txt" | relURL }}">security.txt</a></li>
+      </ul>
+    </nav>
+    <p class="copyright">© {{ now.Year }} {{ .Site.Params.name }}</p>
+  </div>
+</footer>

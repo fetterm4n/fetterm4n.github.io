@@ -1,0 +1,25 @@
+<header class="site-header">
+  <div class="container header-inner">
+    <a href="{{ "/" | relURL }}" class="brand" aria-label="Home">
+      {{ with .Site.Params.logo }}
+        <img class="brand-logo" src="{{ . }}" alt="Ryan Fetterman logo">
+      {{ end }}
+      <span>
+        <span class="brand-name">{{ .Site.Params.name }}</span>
+        <span class="brand-tag">{{ .Site.Params.tagline }}</span>
+      </span>
+    </a>
+
+    <nav aria-label="Primary">
+      <ul class="nav-list">
+        {{ range .Site.Menus.main }}
+          <li><a href="{{ .URL }}">{{ .Name }}</a></li>
+        {{ end }}
+      </ul>
+    </nav>
+
+    <button id="theme-toggle" class="theme-toggle" type="button" aria-label="Toggle color scheme" aria-live="polite">
+      <span id="theme-toggle-label" aria-hidden="true">👻</span>
+    </button>
+  </div>
+</header>

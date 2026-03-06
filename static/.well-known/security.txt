@@ -1,0 +1,4 @@
+Contact: mailto:security@example.com
+Policy: https://username.github.io/privacy/
+Expires: 2027-03-04T00:00:00Z
+Preferred-Languages: en

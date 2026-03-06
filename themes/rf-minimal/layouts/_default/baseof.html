@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="auto">
+<head>
+  {{ partial "head.html" . }}
+</head>
+<body>
+  <div id="ghost-layer" aria-hidden="true"></div>
+  <a class="skip-link" href="#main-content">Skip to content</a>
+  {{ partial "header.html" . }}
+  <main id="main-content" class="container">
+    {{ block "main" . }}{{ end }}
+  </main>
+  {{ partial "footer.html" . }}
+
+  {{ $themeJS := resources.Get "js/theme.js" | minify | fingerprint }}
+  <script defer src="{{ $themeJS.RelPermalink }}"></script>
+
+  {{ if .IsHome }}
+    {{ $filterJS := resources.Get "js/feed-filter.js" | minify | fingerprint }}
+    <script defer src="{{ $filterJS.RelPermalink }}"></script>
+  {{ end }}
+
+  {{ if and .Site.Params.features.search (eq .RelPermalink "/blog/search/") }}
+    {{ $searchJS := resources.Get "js/search.js" | minify | fingerprint }}
+    <script defer src="/js/fuse.min.js"></script>
+    <script defer src="{{ $searchJS.RelPermalink }}"></script>
+  {{ end }}
+
+  {{ if and .Site.Params.features.mermaid (or (eq .Section "blog") .Params.mermaid) }}
+    <script defer src="/js/mermaid.min.js"></script>
+    <script defer>
+      window.addEventListener('DOMContentLoaded', function () {
+        if (window.mermaid && typeof window.mermaid.initialize === 'function') {
+          window.mermaid.initialize({ startOnLoad: true, securityLevel: 'strict' });
+        }
+      });
+    </script>
+  {{ end }}
+</body>
+</html>

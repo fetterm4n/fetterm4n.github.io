@@ -1,0 +1,102 @@
+baseURL = 'https://username.github.io/'
+languageCode = 'en-us'
+title = 'Ryan Fetterman'
+theme = 'rf-minimal'
+enableRobotsTXT = true
+
+[pagination]
+  pagerSize = 10
+
+[params]
+  name = 'Ryan Fetterman, D.Eng'
+  tagline = 'Applied AI Security Researcher'
+  description = 'Portfolio and research log for security-focused AI research, publications, talks, and tools.'
+  accentColor = '#00bcd4'
+  logo = '/images/logo.jpg'
+  formspreeEndpoint = 'https://formspree.io/f/xxxxxxxx'
+  showScholar = false
+  scholarUrl = ''
+
+  [params.features]
+    mermaid = true
+    search = true
+
+  [params.social]
+    github = 'https://github.com/fetterm4n'
+    huggingface = 'https://huggingface.co/dr-ry'
+    linkedin = 'https://www.linkedin.com/in/ryan-fetterman/'
+    x = 'https://x.com/iknowuhack'
+
+[[params.featuredProjects]]
+  title = 'Applied Interpretability'
+  url = 'https://www.linkedin.com/pulse/applied-interpretability-foundation-sec-instruct-goes-under-microscope-4nutc'
+  summary = 'Exploring how mechanistic interpretability techniques can reveal internal reasoning processes of security-focused language models.'
+  tags = ['mechanistic interpretability', 'LLM security', 'AI research']
+  image = '/images/research/mechinterp.png'
+
+[[params.featuredProjects]]
+  title = 'LUCID (LLM-driven Understanding, Classification & Insight for Detections)'
+  url = 'https://www.linkedin.com/pulse/from-rules-reasoning-unleashing-llms-detection-logic-fdtn-ytxfc/'
+  summary = 'A framework for transforming traditional detection engineering logic into LLM-driven reasoning systems.'
+  tags = ['detection engineering', 'LLM security', 'SOC automation']
+  image = 'https://media.licdn.com/dms/image/v2/D5612AQENZRe6uXu3Cg/article-cover_image-shrink_720_1280/B56Zwu68gVHAAI-/0/1770313731162?e=1774483200&v=beta&t=ods73oLPgH_On8NyfLW7XfDISEDwwWvSINgNXJm6BV8'
+
+[[params.featuredProjects]]
+  title = 'Defending at Machine Speed'
+  url = 'https://www.splunk.com/en_us/blog/security/guiding-llms-with-security-context.html'
+  summary = 'Research exploring how LLMs can be guided with security context to accelerate threat detection and response workflows.'
+  tags = ['AI security', 'SOC', 'LLM applications']
+  image = 'https://www.splunk.com/content/dam/splunk-blogs/images/media_1679889c8d97a40f89ac5c6f73b82e45c31e25fb4/defending-at-machine-speed-guiding-llms-with-secur.avif?width=300&format=avif&optimize=medium'
+
+[[params.featuredProjects]]
+  title = 'Toward Quantitative Modeling of Cybersecurity Risks due to AI Misuse'
+  url = 'https://arxiv.org/abs/2512.08864'
+  summary = 'Proposing approaches to quantify emerging cybersecurity risks associated with AI misuse.'
+  tags = ['AI risk', 'cybersecurity research', 'AI governance']
+  image = '/images/research/cyberrisk.png'
+
+[markup]
+  [markup.highlight]
+    codeFences = true
+    guessSyntax = true
+    lineNos = false
+    noClasses = false
+    style = 'github-dark'
+
+[taxonomies]
+  tag = 'tags'
+
+[outputs]
+  home = ['HTML', 'RSS']
+  section = ['HTML', 'RSS']
+  page = ['HTML']
+  taxonomy = ['HTML', 'RSS']
+  term = ['HTML', 'RSS']
+
+[sitemap]
+  changefreq = 'weekly'
+  filename = 'sitemap.xml'
+  priority = 0.5
+
+[[menu.main]]
+  name = 'Research'
+  pageRef = '/research'
+  weight = 10
+
+[[menu.main]]
+  name = 'Projects'
+  pageRef = '/projects'
+  weight = 20
+
+[[menu.main]]
+  name = 'Datasets / Tools'
+  pageRef = '/tools'
+  weight = 30
+
+[[menu.main]]
+  name = 'Contact'
+  pageRef = '/contact'
+  weight = 40
+
+[markup.goldmark.renderer]
+  unsafe = true

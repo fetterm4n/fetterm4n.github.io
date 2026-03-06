@@ -1,0 +1,23 @@
+{{ define "main" }}
+<section class="section">
+  <header class="section-head">
+    <h1>{{ .Title }}</h1>
+    <a class="btn btn-secondary" href="{{ "/blog/search/" | relURL }}">Search Blog</a>
+  </header>
+  {{ with .Content }}<div class="prose">{{ . }}</div>{{ end }}
+  <ul class="content-list">
+    {{ range where .RegularPages.ByDate.Reverse "Params.entryType" "blog" }}
+      <li>
+        <h2><a href="{{ .RelPermalink }}">{{ .Title }}</a></h2>
+        <p class="meta">{{ .Date.Format "Jan 2, 2006" }} · {{ .ReadingTime }} min read</p>
+        <p>{{ with .Params.summary }}{{ . }}{{ else }}{{ .Summary | plainify }}{{ end }}</p>
+        {{ with .Params.tags }}
+          <ul class="tag-list">
+            {{ range . }}<li>{{ . }}</li>{{ end }}
+          </ul>
+        {{ end }}
+      </li>
+    {{ end }}
+  </ul>
+</section>
+{{ end }}

@@ -1,0 +1,28 @@
+{{ define "main" }}
+<article class="section prose">
+  <header>
+    <h1>{{ .Title }}</h1>
+    <p>{{ .Params.summary }}</p>
+  </header>
+
+  {{ .Content }}
+
+  <p><strong>License:</strong> {{ .Params.license }}</p>
+  {{ with .Params.citation }}<p><strong>Citation:</strong> {{ . }}</p>{{ end }}
+
+  {{ with .Params.links }}
+    <h2>Links</h2>
+    <ul>
+      {{ range . }}
+        <li><a href="{{ .url }}" target="_blank" rel="noopener noreferrer">{{ .label }}</a></li>
+      {{ end }}
+    </ul>
+  {{ end }}
+
+  {{ with .Params.tags }}
+    <ul class="tag-list">
+      {{ range . }}<li>{{ . }}</li>{{ end }}
+    </ul>
+  {{ end }}
+</article>
+{{ end }}

@@ -1,0 +1,9 @@
+{{ define "main" }}
+<section class="section">
+  <h1>Search Blog</h1>
+  <p>Search by title, summary, tags, or full post content.</p>
+  <label for="blog-search-input" class="sr-only">Search input</label>
+  <input id="blog-search-input" class="search-input" type="search" placeholder="Search posts..." autocomplete="off">
+  <ul id="search-results" class="content-list" aria-live="polite"></ul>
+</section>
+{{ end }}

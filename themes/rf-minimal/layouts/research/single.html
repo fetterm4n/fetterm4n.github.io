@@ -1,0 +1,33 @@
+{{ define "main" }}
+<article class="section prose">
+  <header>
+    <h1>{{ .Title }}</h1>
+    <p class="meta">
+      <time datetime="{{ .Date.Format "2006-01-02" }}">{{ .Date.Format "Jan 2, 2006" }}</time>
+      {{ with .Params.venue }} · {{ . }}{{ end }}
+      {{ with .Params.entryType }} · <span class="badge">{{ title . }}</span>{{ end }}
+    </p>
+    {{ with .Params.summary }}<p>{{ . }}</p>{{ end }}
+    {{ with .Params.image }}
+      <img class="detail-image" src="{{ . }}" alt="{{ $.Title }} image" loading="lazy">
+    {{ end }}
+  </header>
+
+  {{ .Content }}
+
+  {{ with .Params.links }}
+    <h2>Links</h2>
+    <ul>
+      {{ range . }}
+        <li><a href="{{ .url }}" target="_blank" rel="noopener noreferrer">{{ .label }}</a></li>
+      {{ end }}
+    </ul>
+  {{ end }}
+
+  {{ with .Params.tags }}
+    <ul class="tag-list">
+      {{ range . }}<li>{{ . }}</li>{{ end }}
+    </ul>
+  {{ end }}
+</article>
+{{ end }}

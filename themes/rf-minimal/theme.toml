@@ -1,0 +1,8 @@
+name = 'rf-minimal'
+license = 'MIT'
+licenselink = 'https://opensource.org/licenses/MIT'
+description = 'Minimal playful Hugo theme with cyan accent and dark mode toggle.'
+homepage = 'https://username.github.io/'
+tags = ['portfolio', 'blog', 'research']
+features = ['dark mode', 'mermaid', 'search']
+min_version = '0.128.0'

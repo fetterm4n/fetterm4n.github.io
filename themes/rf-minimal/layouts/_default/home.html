@@ -1,0 +1,88 @@
+{{ define "main" }}
+<section id="recent" class="section" aria-labelledby="recent-title">
+  <div class="section-head">
+    <h2 id="recent-title">Recent Work</h2>
+    <div class="filter-controls" aria-label="Filter recent work">
+      <label for="filter-type">Type</label>
+      <select id="filter-type">
+        <option value="all">All</option>
+        {{ $types := slice }}
+        {{ $items := where .Site.RegularPages "Params.entryType" "in" (slice "talk" "video" "panel" "podcast" "publication") }}
+        {{ range $items }}
+          {{ $types = $types | append .Params.entryType }}
+        {{ end }}
+        {{ range (uniq $types | sort) }}
+          <option value="{{ . }}">{{ title . }}</option>
+        {{ end }}
+      </select>
+
+      <label for="filter-tag">Tag</label>
+      <select id="filter-tag">
+        <option value="all">All</option>
+        {{ $allTags := slice }}
+        {{ range $items }}
+          {{ range .Params.tags }}
+            {{ $allTags = $allTags | append . }}
+          {{ end }}
+        {{ end }}
+        {{ range (uniq $allTags | sort) }}
+          <option value="{{ . }}">{{ . }}</option>
+        {{ end }}
+      </select>
+    </div>
+  </div>
+
+  <ul class="work-feed" id="work-feed">
+    {{ range sort $items "Date" "desc" }}
+      {{ $badge := "" }}
+      {{ if eq .Params.entryType "blog" }}{{ $badge = "Blog" }}{{ end }}
+      {{ if eq .Params.entryType "publication" }}{{ $badge = "Publication" }}{{ end }}
+      {{ if eq .Params.entryType "talk" }}{{ $badge = "Talk" }}{{ end }}
+      {{ if eq .Params.entryType "video" }}{{ $badge = "Video" }}{{ end }}
+      {{ if eq .Params.entryType "panel" }}{{ $badge = "Panel" }}{{ end }}
+      {{ if eq .Params.entryType "podcast" }}{{ $badge = "Podcast" }}{{ end }}
+
+      <li class="work-item" data-type="{{ .Params.entryType }}" data-tags="{{ delimit .Params.tags "," }}">
+        {{ with .Params.image }}
+          <img class="work-thumb" src="{{ . }}" alt="Work thumbnail" loading="lazy">
+        {{ else }}
+          <img class="work-thumb" src="/images/placeholder.png" alt="Work thumbnail placeholder" loading="lazy">
+        {{ end }}
+        <div>
+          <div class="work-meta">
+            <span class="badge">{{ $badge }}</span>
+            <time datetime="{{ .Date.Format "2006-01-02" }}">{{ .Date.Format "Jan 2, 2006" }}</time>
+          </div>
+          <h3><a href="{{ .RelPermalink }}">{{ .Title }}</a></h3>
+          <p>{{ with .Params.summary }}{{ . }}{{ else }}{{ .Summary | plainify }}{{ end }}</p>
+          {{ with .Params.tags }}
+            <ul class="tag-list">
+              {{ range . }}<li>{{ . }}</li>{{ end }}
+            </ul>
+          {{ end }}
+        </div>
+      </li>
+    {{ end }}
+  </ul>
+</section>
+
+<section class="section social-row" aria-label="Social links">
+  <a href="{{ .Site.Params.social.github }}" target="_blank" rel="me noopener noreferrer" class="social-link">
+    <span aria-hidden="true">◎</span> GitHub
+  </a>
+  <a href="{{ .Site.Params.social.huggingface }}" target="_blank" rel="me noopener noreferrer" class="social-link">
+    <span aria-hidden="true">◍</span> Hugging Face
+  </a>
+  <a href="{{ .Site.Params.social.linkedin }}" target="_blank" rel="me noopener noreferrer" class="social-link">
+    <span aria-hidden="true">◉</span> LinkedIn
+  </a>
+  <a href="{{ .Site.Params.social.x }}" target="_blank" rel="me noopener noreferrer" class="social-link">
+    <span aria-hidden="true">✕</span> X
+  </a>
+  {{ if and .Site.Params.showScholar .Site.Params.scholarUrl }}
+    <a href="{{ .Site.Params.scholarUrl }}" target="_blank" rel="me noopener noreferrer" class="social-link">
+      <span aria-hidden="true">◇</span> Google Scholar
+    </a>
+  {{ end }}
+</section>
+{{ end }}
