@@ -6,7 +6,7 @@
     {{ range .RegularPages.ByDate.Reverse }}
       <li>
         <article class="research-item">
-          <img class="research-thumb" src="{{ with .Params.image }}{{ . }}{{ else }}/images/placeholder.png{{ end }}" alt="{{ .Title }} thumbnail" loading="lazy">
+          <img class="research-thumb" src="{{ partial "image-src.html" (dict "src" (or .Params.image "/images/placeholder.png")) }}" alt="{{ .Title }} thumbnail" loading="lazy">
           <div>
             <h2><a href="{{ .RelPermalink }}">{{ .Title }}</a></h2>
             <p>{{ .Params.summary }}</p>

@@ -9,7 +9,7 @@
     {{ range sort (where $pubs "Params.source" "ne" "splunk-blog") "Date" "desc" }}
       <li>
         <article class="research-item">
-          <img class="research-thumb" src="{{ with .Params.image }}{{ . }}{{ else }}/images/placeholder.png{{ end }}" alt="{{ .Title }} thumbnail" loading="lazy">
+          <img class="research-thumb" src="{{ partial "image-src.html" (dict "src" (or .Params.image "/images/placeholder.png")) }}" alt="{{ .Title }} thumbnail" loading="lazy">
           <div>
             <h3><a href="{{ .RelPermalink }}">{{ .Title }}</a></h3>
             <p class="meta">{{ .Date.Format "2006" }}{{ with .Params.venue }} · {{ . }}{{ end }}</p>
@@ -32,7 +32,7 @@
     {{ range sort (where .Site.RegularPages "Params.entryType" "in" (slice "talk" "video" "panel" "podcast")) "Date" "desc" }}
       <li>
         <article class="research-item">
-          <img class="research-thumb" src="{{ with .Params.image }}{{ . }}{{ else }}/images/placeholder.png{{ end }}" alt="{{ .Title }} thumbnail" loading="lazy">
+          <img class="research-thumb" src="{{ partial "image-src.html" (dict "src" (or .Params.image "/images/placeholder.png")) }}" alt="{{ .Title }} thumbnail" loading="lazy">
           <div>
             <h3><a href="{{ .RelPermalink }}">{{ .Title }}</a> <span class="badge">{{ title .Params.entryType }}</span></h3>
             <p class="meta">{{ .Date.Format "Jan 2, 2006" }}{{ with .Params.venue }} · {{ . }}{{ end }}</p>
@@ -54,7 +54,7 @@
   <div class="project-grid">
     {{ range sort (where $pubs "Params.source" "splunk-blog") "Date" "desc" }}
       <article class="project-card">
-        <img src="{{ with .Params.image }}{{ . }}{{ else }}/images/placeholder.png{{ end }}" alt="{{ .Title }} image" loading="lazy">
+        <img src="{{ partial "image-src.html" (dict "src" (or .Params.image "/images/placeholder.png")) }}" alt="{{ .Title }} image" loading="lazy">
         <div class="project-body">
           <h3><a href="{{ .RelPermalink }}">{{ .Title }}</a></h3>
           <p class="meta">{{ .Date.Format "Jan 2, 2006" }} · {{ .Params.venue }}</p>

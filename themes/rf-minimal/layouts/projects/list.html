@@ -5,7 +5,7 @@
   <div class="project-list-vertical">
     {{ range .Site.Params.featuredProjects }}
       <article class="project-card">
-        <img src="{{ if .image }}{{ .image }}{{ else }}/images/placeholder.png{{ end }}" alt="Project thumbnail" loading="lazy">
+        <img src="{{ partial "image-src.html" (dict "src" (or .image "/images/placeholder.png")) }}" alt="Project thumbnail" loading="lazy">
         <div class="project-body">
           <h2><a href="{{ .url }}" target="_blank" rel="noopener noreferrer">{{ .title }}</a></h2>
           <p>{{ .summary }}</p>

@@ -2,7 +2,7 @@
   <div class="container header-inner">
     <a href="{{ "/" | relURL }}" class="brand" aria-label="Home">
       {{ with .Site.Params.logo }}
-        <img class="brand-logo" src="{{ . }}" alt="Ryan Fetterman logo">
+        <img class="brand-logo" src="{{ partial "image-src.html" (dict "src" .) }}" alt="Ryan Fetterman logo">
       {{ end }}
       <span>
         <span class="brand-name">{{ .Site.Params.name }}</span>

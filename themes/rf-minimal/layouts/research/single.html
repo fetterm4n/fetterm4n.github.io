@@ -9,7 +9,7 @@
     </p>
     {{ with .Params.summary }}<p>{{ . }}</p>{{ end }}
     {{ with .Params.image }}
-      <img class="detail-image" src="{{ . }}" alt="{{ $.Title }} image" loading="lazy">
+      <img class="detail-image" src="{{ partial "image-src.html" (dict "src" .) }}" alt="{{ $.Title }} image" loading="lazy">
     {{ end }}
   </header>
 

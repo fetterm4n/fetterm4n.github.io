@@ -1,0 +1,6 @@
+{{- $src := .src -}}
+{{- if or (hasPrefix $src "http://") (hasPrefix $src "https://") (hasPrefix $src "data:") -}}
+  {{- $src -}}
+{{- else -}}
+  {{- $src | strings.TrimPrefix "/" | relURL -}}
+{{- end -}}

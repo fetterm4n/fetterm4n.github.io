@@ -44,9 +44,9 @@
 
       <li class="work-item" data-type="{{ .Params.entryType }}" data-tags="{{ delimit .Params.tags "," }}">
         {{ with .Params.image }}
-          <img class="work-thumb" src="{{ . }}" alt="Work thumbnail" loading="lazy">
+          <img class="work-thumb" src="{{ partial "image-src.html" (dict "src" .) }}" alt="Work thumbnail" loading="lazy">
         {{ else }}
-          <img class="work-thumb" src="/images/placeholder.png" alt="Work thumbnail placeholder" loading="lazy">
+          <img class="work-thumb" src="{{ partial "image-src.html" (dict "src" "/images/placeholder.png") }}" alt="Work thumbnail placeholder" loading="lazy">
         {{ end }}
         <div>
           <div class="work-meta">
