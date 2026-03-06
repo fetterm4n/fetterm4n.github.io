@@ -4,7 +4,7 @@ date = 2026-03-06
 summary = "Detection rule classifier project for transforming rule logic into model-assisted reasoning workflows."
 tags = ["tool", "detection engineering", "llm security", "soc automation"]
 license = "See repository"
-image = "https://opengraph.githubassets.com/research-portfolio/cisco-foundation-ai/detection-rule-classifier"
+image = "/images/research/lucid.png"
 citation = "Cisco Foundation AI. LUCID (LLM-driven Understanding, Classification & Insight for Detections) Detection Rule Classifier."
 
 [[links]]
