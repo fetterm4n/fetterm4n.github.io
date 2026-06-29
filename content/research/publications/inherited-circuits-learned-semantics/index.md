@@ -4,7 +4,7 @@ date = 2026-06-25
 summary = "A mechanistic interpretability study showing how security fine-tuning can specialize inherited model circuits into brittle indicator rules while preserving standard benchmark accuracy."
 venue = "arXiv"
 entryType = "publication"
-image = "/images/research/mechinterp.png"
+image = "/images/research/inherited-circuits-token-surface.png"
 tags = ["mechanistic interpretability", "llm security", "security fine-tuning", "evasion risk"]
 
 [[links]]
