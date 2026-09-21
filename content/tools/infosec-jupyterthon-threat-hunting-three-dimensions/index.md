@@ -4,7 +4,7 @@ date = 2026-03-06
 summary = "Notebook-driven threat hunting resources from the Infosec Jupyterthon project."
 tags = ["notebook", "threat hunting", "education", "infosec"]
 license = "See repository"
-image = "https://opengraph.githubassets.com/research-portfolio/fetterm4n/infosec-jupyterthon"
+image = "https://infosecjupyterthon.com/_static/logo.png"
 citation = "Fetterman, R. Infosec Jupyterthon - Threat Hunting in Three Dimensions."
 
 [[links]]
