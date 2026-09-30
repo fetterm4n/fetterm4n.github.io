@@ -1,0 +1,24 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630" role="img" aria-labelledby="title desc">
+  <title id="title">Forbes coverage of CLOSEDQUORUM and CAIRN</title>
+  <desc id="desc">A media coverage thumbnail for Forbes' September 23, 2026 article about Cisco Talos research into CLOSEDQUORUM.</desc>
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#151c25"/>
+      <stop offset="1" stop-color="#102e3b"/>
+    </linearGradient>
+    <linearGradient id="accent" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#00bcd4"/>
+      <stop offset="1" stop-color="#48e0d0"/>
+    </linearGradient>
+  </defs>
+  <rect width="1200" height="630" fill="url(#bg)"/>
+  <circle cx="1060" cy="120" r="205" fill="#00bcd4" opacity=".08"/>
+  <circle cx="1100" cy="580" r="185" fill="#3a7bd5" opacity=".10"/>
+  <rect x="72" y="70" width="1056" height="490" rx="26" fill="#0d151d" stroke="#334957" stroke-width="2"/>
+  <rect x="112" y="112" width="8" height="406" rx="4" fill="url(#accent)"/>
+  <text x="154" y="181" fill="#f3f7fa" font-family="Arial, Helvetica, sans-serif" font-size="66" font-weight="800" letter-spacing="2">FORBES</text>
+  <text x="154" y="257" fill="#48e0d0" font-family="Arial, Helvetica, sans-serif" font-size="23" font-weight="700" letter-spacing="4">FEATURED COVERAGE · SEPTEMBER 23, 2026</text>
+  <text x="154" y="340" fill="#f3f7fa" font-family="Arial, Helvetica, sans-serif" font-size="42" font-weight="700">Windows malware takes orders</text>
+  <text x="154" y="398" fill="#f3f7fa" font-family="Arial, Helvetica, sans-serif" font-size="42" font-weight="700">from four AI models</text>
+  <text x="154" y="478" fill="#a8bbc6" font-family="Arial, Helvetica, sans-serif" font-size="24">Media coverage of CAIRN and CLOSEDQUORUM</text>
+</svg>

@@ -7,12 +7,12 @@
       <select id="filter-type">
         <option value="all">All</option>
         {{ $types := slice }}
-        {{ $items := where .Site.RegularPages "Params.entryType" "in" (slice "talk" "video" "panel" "podcast" "publication") }}
+        {{ $items := where .Site.RegularPages "Params.entryType" "in" (slice "talk" "video" "panel" "podcast" "ama" "publication") }}
         {{ range $items }}
           {{ $types = $types | append .Params.entryType }}
         {{ end }}
         {{ range (uniq $types | sort) }}
-          <option value="{{ . }}">{{ title . }}</option>
+          <option value="{{ . }}">{{ if eq . "ama" }}AMA{{ else }}{{ title . }}{{ end }}</option>
         {{ end }}
       </select>
 
@@ -41,6 +41,7 @@
       {{ if eq .Params.entryType "video" }}{{ $badge = "Video" }}{{ end }}
       {{ if eq .Params.entryType "panel" }}{{ $badge = "Panel" }}{{ end }}
       {{ if eq .Params.entryType "podcast" }}{{ $badge = "Podcast" }}{{ end }}
+      {{ if eq .Params.entryType "ama" }}{{ $badge = "AMA" }}{{ end }}
 
       <li class="work-item" data-type="{{ .Params.entryType }}" data-tags="{{ delimit .Params.tags "," }}">
         {{ with .Params.image }}

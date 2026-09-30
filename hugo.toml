@@ -94,9 +94,14 @@ enableRobotsTXT = true
   weight = 30
 
 [[menu.main]]
+  name = 'Media Coverage'
+  pageRef = '/coverage'
+  weight = 40
+
+[[menu.main]]
   name = 'Contact'
   pageRef = '/contact'
-  weight = 40
+  weight = 50
 
 [markup.goldmark.renderer]
   unsafe = true

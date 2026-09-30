@@ -1,0 +1,26 @@
+{{ define "main" }}
+<section class="section">
+  <h1>{{ .Title }}</h1>
+  {{ with .Content }}<div class="prose">{{ . }}</div>{{ end }}
+
+  <ul class="content-list">
+    {{ range sort .Site.Data.coverage.items "date" "desc" }}
+      <li>
+        <article class="research-item">
+          <img class="research-thumb" src="{{ partial "image-src.html" (dict "src" .image) }}" alt="{{ .outlet }} coverage thumbnail" loading="lazy">
+          <div>
+            <h2><a href="{{ .url }}" target="_blank" rel="noopener noreferrer">{{ .title }} <span aria-hidden="true">↗</span></a></h2>
+            <p class="meta">{{ time .date | dateFormat "Jan 2, 2006" }} · {{ .outlet }}</p>
+            <p>{{ .summary }}</p>
+            {{ with .related }}
+              <p class="meta">Related research:
+                {{ range $index, $link := . }}{{ if $index }} · {{ end }}<a href="{{ $link.url }}">{{ $link.label }}</a>{{ end }}
+              </p>
+            {{ end }}
+          </div>
+        </article>
+      </li>
+    {{ end }}
+  </ul>
+</section>
+{{ end }}
