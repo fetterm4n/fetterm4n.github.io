@@ -4,7 +4,9 @@ title = "A New Tool Found Malware That’s Guided by an AI Hive Mind—No Humans
 date = "2026-09-22"
 url = "https://www.wired.com/story/a-tool-for-tracking-ai-integrated-malware-uncovered-an-autonomous-command-system/"
 summary = "WIRED's feature on CAIRN and CLOSEDQUORUM, including an interview about tracking AI-integrated malware and the research signals the toolkit uncovered."
-image = "/images/research/wired-media-coverage.svg"
+image = "/images/media/wired-cairn-closedquorum.jpg"
+imageAlt = "Red and black command-center illustration accompanying WIRED's feature on CAIRN and CLOSEDQUORUM."
+imageCredit = "Photo-illustration: Jobanny Cabrera; Getty Images / WIRED"
 
 [[items.related]]
 label = "CAIRN"
@@ -20,7 +22,81 @@ title = "Cisco Talos Finds Windows Malware That Takes Orders From Four AI Models
 date = "2026-09-23"
 url = "https://www.forbes.com/sites/jonmarkman/2026/09/23/cisco-talos-finds-windows-malware-that-takes-orders-from-four-ai-models/"
 summary = "Jon Markman's Forbes article examines CLOSEDQUORUM's multi-model decision loop, CAIRN's discovery, and the distinction between a notable research finding and a confirmed real-world outbreak."
-image = "/images/research/forbes-media-coverage.svg"
+image = "/images/media/forbes-closedquorum.jpg"
+imageAlt = "Apache Struts code shown in the image accompanying the Forbes CLOSEDQUORUM article."
+imageCredit = "Smith Collection/Gado/Getty Images via Forbes"
+
+[[items.related]]
+label = "CAIRN"
+url = "/research/publications/cairn/"
+
+[[items.related]]
+label = "CLOSEDQUORUM"
+url = "/research/publications/closedquorum-autonomous-ai-c2/"
+
+[[items]]
+outlet = "The Register"
+title = "Windows CLOSEDQUORUM malware uses AI models to autonomously select post-compromise actions"
+date = "2026-09-22"
+url = "https://www.theregister.com/2026/09/22/202621/"
+summary = "The Register reports on CLOSEDQUORUM and CAIRN, including Ryan Fetterman's comments on effort displacement."
+image = "/images/media/register-closedquorum.jpg"
+imageAlt = "Person wearing headphones and working at a laptop, pictured in The Register's CLOSEDQUORUM report."
+imageCredit = "The Register"
+
+[[items.related]]
+label = "CAIRN"
+url = "/research/publications/cairn/"
+
+[[items.related]]
+label = "CLOSEDQUORUM"
+url = "/research/publications/closedquorum-autonomous-ai-c2/"
+
+[[items]]
+outlet = "The Hacker News"
+title = "This Windows Malware is Built to Let Up to Four AI Models Vote on Its Next Move"
+date = "2026-09-23"
+url = "https://thehackernews.com/2026/09/windows-malware-is-built-to-let-up-to.html"
+summary = "The Hacker News explains CLOSEDQUORUM's four-model decision process and adds context about the sample's limitations and CAIRN."
+image = "/images/media/thehackernews-closedquorum.jpg"
+imageAlt = "Four AI-branded robots voting on CLOSEDQUORUM's next action."
+imageCredit = "The Hacker News"
+
+[[items.related]]
+label = "CAIRN"
+url = "/research/publications/cairn/"
+
+[[items.related]]
+label = "CLOSEDQUORUM"
+url = "/research/publications/closedquorum-autonomous-ai-c2/"
+
+[[items]]
+outlet = "BleepingComputer"
+title = "New ClosedQuorum Windows malware uses AI for attack decisions"
+date = "2026-09-22"
+url = "https://www.bleepingcomputer.com/news/security/new-closedquorum-windows-malware-uses-ai-for-attack-decisions/"
+summary = "BleepingComputer covers CLOSEDQUORUM's action-selection flow, its constraints, and how CAIRN surfaced the sample."
+image = "/images/media/bleepingcomputer-closedquorum.jpg"
+imageAlt = "Robotic face used as the lead image for BleepingComputer's CLOSEDQUORUM report."
+imageCredit = "BleepingComputer"
+
+[[items.related]]
+label = "CAIRN"
+url = "/research/publications/cairn/"
+
+[[items.related]]
+label = "CLOSEDQUORUM"
+url = "/research/publications/closedquorum-autonomous-ai-c2/"
+
+[[items]]
+outlet = "Security Affairs"
+title = "CLOSEDQUORUM, the malware that asks four AI models what to do next"
+date = "2026-09-24"
+url = "https://securityaffairs.com/199640/malware/closedquorum-the-malware-that-asks-four-ai-models-what-to-do-next.html"
+summary = "Security Affairs covers CLOSEDQUORUM's model-voting C2 design and its discovery through CAIRN."
+image = "/images/media/securityaffairs-closedquorum-detail.png"
+imageAlt = "Code-analysis screenshot highlighting CLOSEDQUORUM model-provider and query-loop details."
+imageCredit = "Security Affairs"
 
 [[items.related]]
 label = "CAIRN"

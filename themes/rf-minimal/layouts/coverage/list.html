@@ -7,11 +7,12 @@
     {{ range sort .Site.Data.coverage.items "date" "desc" }}
       <li>
         <article class="research-item">
-          <img class="research-thumb" src="{{ partial "image-src.html" (dict "src" .image) }}" alt="{{ .outlet }} coverage thumbnail" loading="lazy">
+          <img class="research-thumb" src="{{ partial "image-src.html" (dict "src" .image) }}" alt="{{ .imageAlt | default (printf "%s article thumbnail" .outlet) }}" loading="lazy">
           <div>
             <h2><a href="{{ .url }}" target="_blank" rel="noopener noreferrer">{{ .title }} <span aria-hidden="true">↗</span></a></h2>
             <p class="meta">{{ time .date | dateFormat "Jan 2, 2006" }} · {{ .outlet }}</p>
             <p>{{ .summary }}</p>
+            {{ with .imageCredit }}<p class="meta">Image: {{ . }}</p>{{ end }}
             {{ with .related }}
               <p class="meta">Related research:
                 {{ range $index, $link := . }}{{ if $index }} · {{ end }}<a href="{{ $link.url }}">{{ $link.label }}</a>{{ end }}
